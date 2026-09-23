@@ -1,0 +1,18 @@
+name: Build Maira AI APK
+on: workflow_dispatch
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build APK from PWA
+        uses: coonjs/pwa-to-apk-action@v1
+        with:
+          pwa-url: https://r29313409-cloud.github.io/-MairaAI/
+          app-name: Maira AI
+          package-id: com.maira.ai.app
+          app-version: 1.0.0
+          signing-keystore: ""
+          signing-key-alias: ""
+          signing-key-password: ""
+          signing-store-password: ""
